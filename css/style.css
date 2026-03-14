@@ -348,18 +348,13 @@ body {
 /* ============================================================
    9. AI Assistant / Chat
    ============================================================ */
-/* ============================================================
-   AI Assistant Page — Chat Layout Fix
-   أضيف الكود ده في style.css
-   ============================================================ */
 
-/* الـ navbar ارتفاعه ~70px — chat-wrapper يبدأ من تحته */
 .chat-wrapper {
     display: flex;
     flex-direction: column;
     height: calc(100vh - 70px);
-    /* ← كل الشاشة ناقص الـ navbar */
     overflow: hidden;
+    padding-bottom: 50px;
 }
 
 .assistant-header {
@@ -368,7 +363,6 @@ body {
     border-bottom: 1px solid #dee2e6;
     text-align: center;
     flex-shrink: 0;
-    /* ← ميتضغطش */
 }
 
 .assistant-header h2 {
@@ -391,7 +385,6 @@ body {
     background: #fff;
     border-bottom: 1px solid #dee2e6;
     flex-shrink: 0;
-    /* ← ميتضغطش */
 }
 
 .option-btn {
@@ -415,9 +408,7 @@ body {
 .chat-box {
     flex: 1;
     overflow-y: auto;
-    /* ← الـ scroll هنا بس */
     min-height: 0;
-    /* ← بدونه الـ scroll مش بيشتغل مع flex */
     padding: 20px;
     max-width: 650px;
     width: 100%;
@@ -461,7 +452,6 @@ body {
     border-top: 1px solid #dee2e6;
     padding: 15px;
     flex-shrink: 0;
-    /* ← ثابت في الأسفل دايماً */
 }
 
 .chat-input {

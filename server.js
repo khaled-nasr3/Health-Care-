@@ -1,7 +1,9 @@
 import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
+import dotenv from "dotenv";
 
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -28,7 +30,7 @@ app.post("/ask", async (req, res) => {
                 messages: [
                     {
                         role: "system",
-                        content: "You are Health-Bridge's medical AI assistant. Answer health questions clearly. Always recommend consulting a doctor for serious conditions , and remove stars from your answer and replace it with ()."
+                        content: "You are Health-Bridge's medical AI assistant. Answer health questions clearly. Always recommend consulting a doctor for serious conditions, and remove stars from your answer and replace it with ()."
                     },
                     {
                         role: "user",
@@ -74,8 +76,9 @@ app.post("/ask", async (req, res) => {
     }
 });
 
-const server = app.listen(4000, () => {
-    console.log("Server running on port 4000");
+const PORT = process.env.PORT || 4000;
+const server = app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
 
 server.on("error", (err) => console.error("Server error:", err.message));
