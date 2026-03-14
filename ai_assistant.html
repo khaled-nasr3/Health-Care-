@@ -116,7 +116,7 @@
             messages.appendChild(typing);
 
             try {
-                const response = await fetch("http://localhost:4000/ask", {
+                const response = await fetch("health-care-production-58f4.up.railway.app", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ question })
