@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Health Library | CareHub</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background: #f3f6fb;
+            font-family: system-ui;
+        }
+
+        .page-header {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+
+        .library-card {
+
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+
+            transition: 0.3s;
+
+        }
+
+        .library-card:hover {
+
+            transform: translateY(-5px);
+            box-shadow: 1px 1px 1px 1px gray;
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #e9f2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 60px 0;
+            margin-top: 80px;
+        }
+
+        footer a {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" width="180" class="me-2">
+            </a>
+
+            <!-- Hamburger Button (موبايل) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="collapse navbar-collapse" id="mainNav">
+
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="library.html">Health Library</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ai_assistant.html">AI Assistant</a>
+                    </li>
+                </ul>
+
+                <!-- Login Button -->
+                <button class="btn btn-primary px-4">Login</button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div class="container">
+
+            <h1 class="fw-bold mb-3 mt-5 ">
+                Health Library
+            </h1>
+
+            <p class="text-muted">
+                Browse trusted medical articles and health resources.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- LIBRARY CARDS -->
+
+    <section class="container">
+
+        <div class="row g-4">
+
+
+            <div class="col-12 col-md-4 col-lg-6">
+                <a class="text-dark text-decoration-none" href="Guidelines.html#mother">
+                    <div class="library-card">
+
+                        <div class="icon-circle text-primary">
+                            <img class="w-100" src="images/pregnant.png" alt="">
+                        </div>
+
+                        <h5>Pregnancy Care</h5>
+
+                        <p class="text-muted">
+                            Essential guides and tips for expecting mothers.
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-md-4 col-lg-6">
+
+                <a class="text-dark text-decoration-none" href="Guidelines.html#old">
+                    <div class="library-card">
+                        <div class="icon-circle text-primary d-flex">
+                            <img class="w-75" src="images/old-man.png" alt="">
+                            <img class="w-75" src="images/old-women.png" alt="">
+                        </div>
+
+                        <h5>Senior Health</h5>
+
+                        <p class="text-muted">
+                            Managing chronic conditions and healthy aging.
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4 col-lg-6">
+                <a class="text-dark text-decoration-none" href="Guidelines.html#heart">
+                    <div class="library-card">
+
+                        <div class="icon-circle text-danger">
+                            <img class="w-100" src="images/heart-rate.png" alt="">
+                        </div>
+
+                        <h5>Heart Health</h5>
+
+                        <p class="text-muted">
+                            Prevention tips and lifestyle guidance.
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-md-4 col-lg-6">
+                <a class="text-dark text-decoration-none" href="Guidelines.html#baby">
+                    <div class="library-card">
+
+                        <div class="icon-circle text-success">
+                            <img src="images/baby-bottle.png" alt="">
+                        </div>
+
+                        <h5>Newborn Care</h5>
+
+                        <p class="text-muted">
+                            Everything you need to know in the first weeks.
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-12 col-md-4 col-lg-6">
+                <a class="text-dark text-decoration-none" href="Guidelines.html#suger">
+                    <div class="library-card">
+
+                        <div class="icon-circle text-success">
+                            <img src="images/glucometer.png" alt="">
+                        </div>
+
+                        <h5>Diabetes</h5>
+
+                        <p class="text-muted">
+                            Blood suger managemente guide 
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4 col-lg-6">
+                <a class="text-dark text-decoration-none" href="Guidelines.html#pressure">
+                    <div class="library-card">
+
+                        <div class="icon-circle text-success">
+                            <img src="images/pressure'.png" alt="">
+                        </div>
+
+                        <h5>Blood Pressure</h5>
+
+                        <p class="text-muted">
+                            Hypertension management tips
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer >
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="images/logo.png" width="180" class="me-2">
+                    </a>
+
+
+                    <p>Your trusted partner in health and wellness.</p>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h6>Quick Links</h6>
+
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h6>Resources</h6>
+
+                    <a href="#">Health Articles</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Support</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h6>Need Help?</h6>
+
+                    <p>Available 24/7 for your health questions</p>
+
+                    <button class="btn btn-light">
+                        Contact Support
+                    </button>
+
+                </div>
+
+            </div>
+
+            <hr class="">
+
+            <p class="text-center text-light">
+                © 2026 CareHub. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

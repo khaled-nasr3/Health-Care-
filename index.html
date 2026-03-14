@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareHub</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" width="180" class="me-2">
+            </a>
+
+            <!-- Hamburger Button (موبايل) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="collapse navbar-collapse" id="mainNav">
+
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="library.html">Health Library</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ai_assistant.html">AI Assistant</a>
+                    </li>
+                </ul>
+
+                <!-- Login Button -->
+                <button class="btn btn-primary px-4">Login</button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Hero -->
+
+    <div class="hero">
+        <div class="header-card">
+            <div class="d-flex align-items-center gap-3">
+                <div class="header-icon "><img class="" src="images/warning.png" alt=""></div>
+                <div>
+                    <div class="header-title">Medical Emergency</div>
+                    <div class="header-sub">Quick access to emergency services</div>
+                </div>
+            </div>
+            <div class="alert-banner">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                In case of emergency, tap any button below to call immediately
+            </div>
+        </div>
+
+        <!-- ── Emergency Buttons ── -->
+        <div class="container">
+            <div class="row g-3 mb-4">
+
+                <div class="col-12 col-md-6 col-lg-6">
+                    <button class="btn-emg emg-contact w-100"
+                        onclick="openCall('Emergency Contact','Your Close One','📞')">
+                        <div class="icon-circle pulse"><img src="images/phone1.png" alt=""></div>
+                        <span class="btn-label">Emergency Contact</span>
+                        <span class="btn-sub">Call your close one</span>
+                    </button>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-6">
+                    <button class="btn-emg emg-police w-100" onclick="openCall('Police','122','🛡️')">
+                        <div class="icon-circle"><img src="images/police.png" alt=""></div>
+                        <span class="btn-label">Police</span>
+                        <span class="btn-sub">Call 122</span>
+                    </button>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-6">
+                    <button class="btn-emg emg-ambulance w-100" onclick="openCall('Ambulance','123','🚑')">
+                        <div class="icon-circle"><img src="images/ambulance.png" alt=""></div>
+                        <span class="btn-label">Ambulance</span>
+                        <span class="btn-sub">Medical emergency</span>
+                    </button>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-6">
+                    <button class="btn-emg emg-fire w-100" onclick="openCall('Fire Department','180','🔥')">
+                        <div class="icon-circle"><img src="images/fire.png" alt=""></div>
+                        <span class="btn-label">Fire Department</span>
+                        <span class="btn-sub">Fire emergency</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ── Medical Info ── -->
+        <div class="info-card">
+            <div class="info-card-header">
+                <span class="info-title">Medical Information</span>
+                <button class="btn-edit" onclick="openEdit()">Edit</button>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon-wrap ic-blue"><i class="fa-regular fa-user"></i></div>
+                    <div>
+                        <div class="info-label">Full Name</div>
+                        <div class="info-value" id="disp-name">John Doe</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon-wrap ic-red"><i class="fa-solid fa-droplet"></i></div>
+                    <div>
+                        <div class="info-label">Blood Type</div>
+                        <div class="info-value" id="disp-blood">O+</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon-wrap ic-yellow"><i class="fa-solid fa-capsules"></i></div>
+                    <div>
+                        <div class="info-label">Allergies</div>
+                        <div class="info-value" id="disp-allergy">Penicillin</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon-wrap ic-purple"><i class="fa-regular fa-file-lines"></i></div>
+                    <div>
+                        <div class="info-label">Medical Conditions</div>
+                        <div class="info-value" id="disp-condition">Diabetes Type 2</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Edit Modal ── -->
+        <div class="modal-overlay" id="editModal">
+            <div class="modal-box">
+                <h3>Edit Medical Information</h3>
+                <p>Update your personal medical details.</p>
+
+                <label>Full Name</label>
+                <input type="text" id="inp-name" placeholder="Your full name" />
+
+                <label>Blood Type</label>
+                <select id="inp-blood">
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                    <option selected>O+</option>
+                    <option>O-</option>
+                </select>
+
+                <label>Allergies</label>
+                <input type="text" id="inp-allergy" placeholder="e.g. Penicillin, Pollen" />
+
+                <label>Medical Conditions</label>
+                <input type="text" id="inp-condition" placeholder="e.g. Diabetes Type 2" />
+
+                <div class="modal-btns">
+                    <button class="btn-cancel" onclick="closeEdit()">Cancel</button>
+                    <button class="btn-save" onclick="saveEdit()">Save</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Call Confirm Modal ── -->
+        <div class="modal-overlay" id="callModal">
+            <div class="call-modal-box">
+                <div class="call-icon-big" id="call-icon-bg">
+                    <span id="call-emoji">📞</span>
+                </div>
+                <div class="call-name" id="call-name-disp">Emergency Contact</div>
+                <div class="call-number" id="call-num-disp">Your Close One</div>
+                <button class="btn-call-confirm" onclick="confirmCall()">
+                    <i class="fa-solid fa-phone"></i> Call Now
+                </button>
+                <button class="btn-call-cancel" onclick="closeCall()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!-- <section class="hero">
+
+        <div class="container">
+
+            <h1>Your Trusted Health Companion</h1>
+
+            <p>
+                Access reliable health information, get symptom guidance, and connect with care resources designed for
+                you and your family.
+            </p>
+            <div class="search-box">
+                <input id="question" type="text" placeholder="Search health topics, symptoms, or conditions...">
+                <button onclick="goToAssistant()" class="btn btn-primary">Search</button>
+            </div>
+
+
+        </div>
+
+    </section> -->
+
+
+
+    <!-- footer -->
+
+    <footer class="">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <img src="images/logo.png" width="180">
+
+                    </a>
+
+                    <p>Your trusted partner in health and wellness.</p>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h6>Quick Links</h6>
+
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h6>Resources</h6>
+
+                    <a href="#">Health Articles</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Support</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h6>Need Help?</h6>
+
+                    <p>Available 24/7 for your health questions</p>
+
+                    <button class="btn btn-light">
+                        Contact Support
+                    </button>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <p class="text-center text-light">
+                © 2026 HealthBridge. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+    <script>
+        // ── Edit Modal ──
+        function openEdit() {
+            document.getElementById('inp-name').value = document.getElementById('disp-name').textContent;
+            document.getElementById('inp-allergy').value = document.getElementById('disp-allergy').textContent;
+            document.getElementById('inp-condition').value = document.getElementById('disp-condition').textContent;
+            const blood = document.getElementById('disp-blood').textContent;
+            const sel = document.getElementById('inp-blood');
+            for (let o of sel.options) if (o.value === blood) o.selected = true;
+            document.getElementById('editModal').classList.add('show');
+        }
+        function closeEdit() { document.getElementById('editModal').classList.remove('show'); }
+        function saveEdit() {
+            document.getElementById('disp-name').textContent = document.getElementById('inp-name').value || 'N/A';
+            document.getElementById('disp-blood').textContent = document.getElementById('inp-blood').value || 'N/A';
+            document.getElementById('disp-allergy').textContent = document.getElementById('inp-allergy').value || 'N/A';
+            document.getElementById('disp-condition').textContent = document.getElementById('inp-condition').value || 'N/A';
+            closeEdit();
+        }
+
+        // ── Call Modal ──
+        const bgColors = {
+            'Emergency Contact': '#2563eb',
+            'Police': '#6C3EE8',
+            'Ambulance': '#dc2626',
+            'Fire Department': '#ea580c'
+        };
+        function openCall(name, num, emoji) {
+            document.getElementById('call-name-disp').textContent = name;
+            document.getElementById('call-num-disp').textContent = num;
+            document.getElementById('call-emoji').textContent = emoji;
+            document.getElementById('call-icon-bg').style.background = bgColors[name] || '#2563eb';
+            document.getElementById('callModal').classList.add('show');
+        }
+        function closeCall() { document.getElementById('callModal').classList.remove('show'); }
+        function confirmCall() {
+            const num = document.getElementById('call-num-disp').textContent;
+            closeCall();
+            window.location.href = 'tel:' + num.replace(/\D/g, '');
+        }
+
+        // Close modals on overlay click
+        document.querySelectorAll('.modal-overlay').forEach(el =>
+            el.addEventListener('click', e => { if (e.target === el) el.classList.remove('show'); })
+        );
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

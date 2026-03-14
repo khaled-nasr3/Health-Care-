@@ -1,0 +1,223 @@
+/* ============================================================
+   Base
+   ============================================================ */
+body {
+    font-family: Arial;
+    background: #f5f5f5;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-section img {
+    width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+    max-width: 520px;
+}
+
+/* ============================================================
+   Shared Components
+   ============================================================ */
+.tag {
+    background: linear-gradient(90deg, #ff4ecd, #7a5cff);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+h1 {
+    color: #ff2d75;
+    margin-top: 15px;
+}
+
+.intro {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.points {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.point {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.point span {
+    background: linear-gradient(135deg, #ff4ecd, #7a5cff);
+    color: white;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.point p {
+    margin: 0;
+}
+
+.tips {
+    margin-top: 30px;
+    background: linear-gradient(135deg, #ffd3f4, #e4d4ff);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tips h3 {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+}
+
+.tips ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.tips li {
+    margin-bottom: 10px;
+}
+
+.source {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* ============================================================
+   Elderly Section
+   ============================================================ */
+.elderly-section {
+    background: #eef7ff;
+    padding: 60px 0;
+}
+
+.elderly-section .tag {
+    background: linear-gradient(90deg, #1da1f2, #0077ff);
+}
+
+.elderly-section h1 {
+    color: #0b66ff;
+}
+
+.elderly-section .point span {
+    background: linear-gradient(135deg, #1da1f2, #0077ff);
+}
+
+.elderly-section .tips {
+    background: linear-gradient(135deg, #d6ecff, #b9ddff);
+    border: 1px solid #9ed0ff;
+}
+
+/* ============================================================
+   Heart Section
+   ============================================================ */
+.heart-section {
+    background: #fff5f5;
+    padding: 60px 0;
+}
+
+.heart-section .tag {
+    background: linear-gradient(90deg, #ff4b4b, #ff1e56);
+}
+
+.heart-section h1 {
+    color: #e60023;
+}
+
+.heart-section .point span {
+    background: linear-gradient(135deg, #ff4b4b, #ff1e56);
+}
+
+.heart-section .tips {
+    background: linear-gradient(135deg, #ffd6d6, #ffc2c2);
+    border: 1px solid #ffb3b3;
+}
+
+/* ============================================================
+   Newborn Care Section
+   ============================================================ */
+.newborn-section {
+    background: #fffbf0;
+    padding: 60px 0;
+}
+
+.newborn-section .tag {
+    background: linear-gradient(90deg, #f5a623, #f0810f);
+}
+
+.newborn-section h1 {
+    color: #d4860a;
+}
+
+.newborn-section .point span {
+    background: linear-gradient(135deg, #f5a623, #f0810f);
+}
+
+.newborn-section .tips {
+    background: linear-gradient(135deg, #fef0c7, #fde68a);
+    border: 1px solid #fcd34d;
+}
+.bp-section {
+    background: #f0faf8;
+    padding: 60px 0;
+}
+ 
+.bp-section .tag {
+    background: linear-gradient(90deg, #00b89f, #007f6e);
+}
+ 
+.bp-section h1 {
+    color: #007f6e;
+}
+ 
+.bp-section .point span {
+    background: linear-gradient(135deg, #00b89f, #007f6e);
+}
+ 
+.bp-section .tips {
+    background: linear-gradient(135deg, #c8f0ea, #a8e6de);
+    border: 1px solid #80d5ca;
+}
+.diabetes-section {
+    background: #f3f0ff;
+    padding: 60px 0;
+}
+ 
+.diabetes-section .tag {
+    background: linear-gradient(90deg, #7a5cff, #5b3fd4);
+}
+ 
+.diabetes-section h1 {
+    color: #5b3fd4;
+}
+ 
+.diabetes-section .point span {
+    background: linear-gradient(135deg, #7a5cff, #5b3fd4);
+}
+ 
+.diabetes-section .tips {
+    background: linear-gradient(135deg, #e0d9ff, #cfc4ff);
+    border: 1px solid #b8a8ff;
+}

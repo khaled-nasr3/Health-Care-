@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical AI Assistant</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" width="180" class="me-2">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="library.html">Health Library</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="ai_assistant.html">AI Assistant</a></li>
+                </ul>
+                <button class="btn btn-primary px-4">Login</button>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ↓ Chat Wrapper — ده اللي بيحل المشكلة -->
+    <div class="chat-wrapper">
+
+        <div class="assistant-header">
+            <h2>🩺 Medical AI Assistant</h2>
+            <p>Available 24/7 for your health questions</p>
+        </div>
+
+        <div class="options">
+            <div class="option-btn" onclick="askQuick('What are common cold symptoms?')">🤒 Symptom Checker</div>
+            <div class="option-btn" onclick="askQuick('What should I know about common medications?')">💊 Medication
+                Info</div>
+            <div class="option-btn" onclick="askQuick('Give me tips for a healthy lifestyle')">❤️ Health Tips</div>
+            <div class="option-btn" onclick="askQuick('When should I see a doctor?')">👨‍⚕️ See a Doctor?</div>
+        </div>
+
+        <div class="chat-box" id="chatBox">
+            <div class="messages-wrapper" id="messages">
+                <div class="chat-message bot-message">
+                    Hello! I'm your medical AI assistant. How can I help you today? I can provide general health
+                    information, answer questions about symptoms, medications, or give wellness advice.
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <div class="chat-input">
+                <input type="text" id="question" placeholder="Ask me anything about your health..."
+                    onkeypress="handleKey(event)">
+                <button onclick="askAI()">➤</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- /chat-wrapper -->
+
+    <script>
+        window.onload = () => {
+            const params = new URLSearchParams(window.location.search);
+            const q = params.get("q");
+            if (q) {
+                document.getElementById("question").value = q;
+                askAI();
+            }
+        };
+
+        function handleKey(e) {
+            if (e.key === "Enter") askAI();
+        }
+
+        function askQuick(text) {
+            document.getElementById("question").value = text;
+            askAI();
+        }
+
+        function addMessage(text, isUser) {
+            const messages = document.getElementById("messages");
+            const div = document.createElement("div");
+            div.className = `chat-message ${isUser ? "user-message" : "bot-message"}`;
+            div.innerText = text;
+            messages.appendChild(div);
+            document.getElementById("chatBox").scrollTop = document.getElementById("chatBox").scrollHeight;
+        }
+
+        async function askAI() {
+            const input = document.getElementById("question");
+            const question = input.value.trim();
+            if (!question) return;
+
+            addMessage(question, true);
+            input.value = "";
+
+            const messages = document.getElementById("messages");
+            const typing = document.createElement("div");
+            typing.className = "typing";
+            typing.id = "typing";
+            typing.innerText = "AI is typing...";
+            messages.appendChild(typing);
+
+            try {
+                const response = await fetch("http://localhost:4000/ask", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ question })
+                });
+
+                document.getElementById("typing")?.remove();
+
+                if (!response.ok) {
+                    addMessage("❌ Server error. Make sure the backend is running.", false);
+                    return;
+                }
+
+                const botDiv = document.createElement("div");
+                botDiv.className = "chat-message bot-message";
+                messages.appendChild(botDiv);
+
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    const lines = decoder.decode(value).split("\n").filter(l => l.trim());
+                    for (const line of lines) {
+                        if (!line.startsWith("data: ")) continue;
+                        const raw = line.replace("data: ", "").trim();
+                        if (raw === "[DONE]") return;
+                        try {
+                            const parsed = JSON.parse(raw);
+                            if (parsed.error) { addMessage(parsed.error, false); return; }
+                            if (parsed.token) {
+                                botDiv.innerText += parsed.token;
+                                document.getElementById("chatBox").scrollTop = document.getElementById("chatBox").scrollHeight;
+                            }
+                        } catch { }
+                    }
+                }
+
+            } catch (err) {
+                document.getElementById("typing")?.remove();
+                addMessage("❌ Cannot connect to server. Make sure you ran: node server.js", false);
+            }
+        }
+    </script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
