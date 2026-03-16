@@ -1,0 +1,77 @@
+/* Color variables based on the reference image */
+:root {
+    --main-teal: #008080; 
+    --light-teal: #e6f2f2; 
+    --dark-text: #2c3e50;
+}
+
+/* Main Section Styling */
+.section-title {
+    color: var(--dark-text);
+    font-size: 2.5rem;
+}
+
+/* Custom Card Styling */
+.team-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    /* The distinctive teal left border from the image */
+    border-left: 5px solid var(--main-teal); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* Subtle hover effect */
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Image styling */
+.team-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Text styling */
+.member-name {
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 5px;
+}
+
+/* Role Badge Styling */
+.bg-teal-light {
+    background-color: var(--light-teal);
+}
+
+.text-teal {
+    color: var(--main-teal);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+/* Description styling for better readability */
+p.small {
+    line-height: 1.6;
+    color: #6c757d;
+}
+
+
+footer {
+    background: #0f172a;
+    color: #fff;
+    padding: 60px 0;
+    margin-top: 100px;
+}
+
+footer a {
+    color: #cbd5e1;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}

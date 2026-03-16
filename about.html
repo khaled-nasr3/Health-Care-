@@ -5,112 +5,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="CSS/styel.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
 <body>
-
-
     <nav class="navbar navbar-expand-lg">
+
         <div class="container-fluid">
 
+            <!-- Logo -->
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="images/logo.png" width="180" class="me-2">
             </a>
 
+            <!-- Hamburger Button (موبايل) -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
                 aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- Nav Links -->
             <div class="collapse navbar-collapse" id="mainNav">
+
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="library.html"> Library</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold" href="ai_assistant.html">AI Assistant</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="library.html"> Library</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="ai_assistant.html">AI Assistant</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link fw-bold" href="about.html">About Us</a>
                     </li>
                 </ul>
+
+                <!-- Login Button -->
                 <button class="btn btn-primary px-4">Login</button>
+
             </div>
 
         </div>
+
     </nav>
-    <section class="bg-gray-50 py-20 px-4">
-        <div class="max-w-6xl mx-auto">
 
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-extrabold text-slate-800 mb-2">Our Project Team</h2>
-                <p class="text-slate-500">The brilliant minds behind the HealthBridge medical platform.</p>
-                <div class="w-20 h-1 bg-[#00C6BF] mx-auto mt-4 rounded-full"></div>
+
+    <section class="team-section py-5">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Our Project Team</h2>
+                <p class="text-muted">The brilliant minds behind the Healthbridge medical platform.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                <div
-                    class="bg-white p-6 rounded-2xl shadow-sm border-l-8 border-[#00C6BF] flex items-center gap-6 hover:shadow-xl transition-all duration-300">
-                    <div class="shrink-0">
-                        <img src="images/Khaled Nasr.jpeg" alt="Team Leader"
-                            class="w-24 h-24 rounded-xl object-cover shadow-sm">
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-slate-800">Khaled Nasr</h3>
-                        <p class="text-[#00C6BF] font-bold text-sm uppercase tracking-wide">Team Leader</p>
-                        <p class="text-slate-500 text-sm mt-2 leading-relaxed">Responsible for overseeing the project
-                            roadmap, coordinating between departments, and ensuring the final delivery meets
-                            HealthBridge standards.</p>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="team-card d-flex align-items-center">
+                        <img src="images/Khaled Nasr.jpeg" alt="Khaled Nasr" class="team-img">
+                        <div class="ms-3">
+                            <h4 class="member-name">Khaled Nasr</h4>
+                            <span class="badge bg-teal-light text-teal mb-2">TEAM LEADER</span>
+                            <p class="small text-muted mb-0">Responsible for overseeing the project roadmap,
+                                coordinating between departments, and ensuring the final delivery meets Healthbridge
+                                standards.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div
-                    class="bg-white p-6 rounded-2xl shadow-sm border-l-8 border-[#00C6BF] flex items-center gap-6 hover:shadow-xl transition-all duration-300">
-                    <div class="shrink-0">
-                        <img src="images/Ahmad Yaser.jpeg" alt="Sources Specialist"
-                            class="w-24 h-24 rounded-xl object-cover shadow-sm">
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-slate-800">Ahmad Yaser</h3>
-                        <p class="text-[#00C6BF] font-bold text-sm uppercase tracking-wide">Sources and Conclusions</p>
-                        <p class="text-slate-500 text-sm mt-2 leading-relaxed">Dedicated to verifying medical data
-                            sources and synthesizing complex information into actionable project conclusions.</p>
+                <div class="col-md-6">
+                    <div class="team-card d-flex align-items-center">
+                        <img src="images/Ahmad Yaser.jpeg" alt="Ahmad Yaser" class="team-img">
+                        <div class="ms-3">
+                            <h4 class="member-name">Ahmad Yaser</h4>
+                            <span class="badge bg-teal-light text-teal mb-2">SOURCES AND CONCLUSIONS</span>
+                            <p class="small text-muted mb-0">Dedicated to verifying medical data sources and
+                                synthesizing complex information into actionable project conclusions.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div
-                    class="bg-white p-6 rounded-2xl shadow-sm border-l-8 border-[#00C6BF] flex items-center gap-6 hover:shadow-xl transition-all duration-300">
-                    <div class="shrink-0">
-                        <img src="images/Sara Mostafa.jpeg" alt="Research"
-                            class="w-24 h-24 rounded-xl object-cover shadow-sm">
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-slate-800">Sara Mostafa </h3>
-                        <p class="text-[#00C6BF] font-bold text-sm uppercase tracking-wide">Research</p>
-                        <p class="text-slate-500 text-sm mt-2 leading-relaxed">Conducted extensive market research and
-                            healthcare trends analysis to ensure the platform solves real-world medical challenges.</p>
+                <div class="col-md-6">
+                    <div class="team-card d-flex align-items-center">
+                        <img src="images/Sara Mostafa.jpeg" alt="Sara Mostafa" class="team-img">
+                        <div class="ms-3">
+                            <h4 class="member-name">Sara Mostafa</h4>
+                            <span class="badge bg-teal-light text-teal mb-2">RESEARCH</span>
+                            <p class="small text-muted mb-0">Conducted extensive market research and healthcare trends
+                                analysis to ensure the platform solves real-world medical challenges.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div
-                    class="bg-white p-6 rounded-2xl shadow-sm border-l-8 border-[#00C6BF] flex items-center gap-6 hover:shadow-xl transition-all duration-300">
-                    <div class="shrink-0">
-                        <img src="https://via.placeholder.com/150" alt="Front End Developer"
-                            class="w-24 h-24 rounded-xl object-cover shadow-sm">
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-slate-800">Ziad Ayman</h3>
-                        <p class="text-[#00C6BF] font-bold text-sm uppercase tracking-wide">Front End Developer</p>
-                        <p class="text-slate-500 text-sm mt-2 leading-relaxed">Transformed the UI/UX designs into a
-                            high-performance, responsive interface using Tailwind CSS and modern web technologies.</p>
+                <div class="col-md-6">
+                    <div class="team-card d-flex align-items-center">
+                        <img src="images/zyad.png" alt="Ziad Ayman" class="team-img">
+                        <div class="ms-3">
+                            <h4 class="member-name">Ziad Ayman</h4>
+                            <span class="badge bg-teal-light text-teal mb-2">FRONT END DEVELOPER</span>
+                            <p class="small text-muted mb-0">Transformed the UI/UX designs into a high-performance,
+                                responsive interface using Tailwind CSS and modern web technologies.</p>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
+        <footer class="">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <a class="navbar-brand d-flex align-items-center" href="#">
+                            <img src="images/logo.png" width="180">
+
+                        </a>
+
+                        <p>Your trusted partner in health and wellness.</p>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <h6>Quick Links</h6>
+
+                        <a href="">About Us</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Privacy Policy</a>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <h6>Resources</h6>
+
+                        <a href="#">World Health Organization (WHO)</a>
+                        <a href="#"> Centers for Disease Control and Prevention
+                            (CDC)</a>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <h6>Need Help?</h6>
+
+                        <p>Available 24/7 for your health questions</p>
+
+                        <button class="btn btn-light">
+                            Contact Support
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <p class="text-center text-light">
+                    © 2026 HealthBridge. All rights reserved.
+                </p>
+
+            </div>
+
+        </footer>
     </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
