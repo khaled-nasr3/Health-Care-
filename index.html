@@ -227,107 +227,136 @@
 
     <footer class="">
 
-            <div class="container">
+        <div class="container">
 
-                <div class="row">
+            <div class="row">
 
-                    <div class="col-md-3">
-                        <a class="navbar-brand d-flex align-items-center" href="#">
-                            <img src="images/logo.png" width="180">
+                <div class="col-md-3">
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <img src="images/logo.png" width="180">
 
-                        </a>
+                    </a>
 
-                        <p>Your trusted partner in health and wellness.</p>
-
-                    </div>
-
-                    <div class="col-md-3">
-
-                        <h6>Quick Links</h6>
-
-                        <a href="">About Us</a>
-                        <a href="#">Contact</a>
-                        <a href="#">Privacy Policy</a>
-
-                    </div>
-
-                    <div class="col-md-3">
-
-                        <h6>Resources</h6>
-
-                        <a href="#">World Health Organization (WHO)</a>
-                        <a href="#"> Centers for Disease Control and Prevention
-                            (CDC)</a>
-
-                    </div>
-
-                    <div class="col-md-3">
-
-                        <h6>Need Help?</h6>
-
-                        <p>Available 24/7 for your health questions</p>
-
-                        <button class="btn btn-light">
-                            Contact Support
-                        </button>
-
-                    </div>
+                    <p>Your trusted partner in health and wellness.</p>
 
                 </div>
 
-                <hr>
+                <div class="col-md-3">
 
-                <p class="text-center text-light">
-                    © 2026 HealthBridge. All rights reserved.
-                </p>
+                    <h6>Quick Links</h6>
+
+                    <a href="">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h6>Resources</h6>
+
+                    <a href="#">World Health Organization (WHO)</a>
+                    <a href="#"> Centers for Disease Control and Prevention
+                        (CDC)</a>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h6>Need Help?</h6>
+
+                    <p>Available 24/7 for your health questions</p>
+
+                    <button class="btn btn-light">
+                        Contact Support
+                    </button>
+
+                </div>
 
             </div>
 
-        </footer>
+            <hr>
+
+            <p class="text-center text-light">
+                © 2026 HealthBridge. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
     <script>
         // ── Edit Modal ──
+
+        // Open edit modal and populate fields with current displayed data
         function openEdit() {
+            // Copy displayed data into input fields
             document.getElementById('inp-name').value = document.getElementById('disp-name').textContent;
             document.getElementById('inp-allergy').value = document.getElementById('disp-allergy').textContent;
             document.getElementById('inp-condition').value = document.getElementById('disp-condition').textContent;
+
+            // Select the correct blood type in the dropdown
             const blood = document.getElementById('disp-blood').textContent;
             const sel = document.getElementById('inp-blood');
             for (let o of sel.options) if (o.value === blood) o.selected = true;
+
+            // Show the modal
             document.getElementById('editModal').classList.add('show');
         }
+
+        // Close the edit modal
         function closeEdit() { document.getElementById('editModal').classList.remove('show'); }
+
+        // Save changes and update the displayed data
         function saveEdit() {
+            // Update displayed data from input fields, fallback to N/A if empty
             document.getElementById('disp-name').textContent = document.getElementById('inp-name').value || 'N/A';
             document.getElementById('disp-blood').textContent = document.getElementById('inp-blood').value || 'N/A';
             document.getElementById('disp-allergy').textContent = document.getElementById('inp-allergy').value || 'N/A';
             document.getElementById('disp-condition').textContent = document.getElementById('inp-condition').value || 'N/A';
+
+            // Close the modal after saving
             closeEdit();
         }
 
         // ── Call Modal ──
+
+        // Icon background colors for each contact type
         const bgColors = {
-            'Emergency Contact': '#2563eb',
-            'Police': '#6C3EE8',
-            'Ambulance': '#dc2626',
-            'Fire Department': '#ea580c'
+            'Emergency Contact': '#2563eb', // Blue
+            'Police': '#6C3EE8',            // Purple
+            'Ambulance': '#dc2626',         // Red
+            'Fire Department': '#ea580c'    // Orange
         };
+
+        // Open call modal and display contact details
         function openCall(name, num, emoji) {
-            document.getElementById('call-name-disp').textContent = name;
-            document.getElementById('call-num-disp').textContent = num;
-            document.getElementById('call-emoji').textContent = emoji;
+            document.getElementById('call-name-disp').textContent = name;   // Contact name
+            document.getElementById('call-num-disp').textContent = num;     // Phone number
+            document.getElementById('call-emoji').textContent = emoji;      // Emoji icon
+
+            // Set icon background color based on contact type, default to blue if not found
             document.getElementById('call-icon-bg').style.background = bgColors[name] || '#2563eb';
+
+            // Show the modal
             document.getElementById('callModal').classList.add('show');
         }
+
+        // Close the call modal
         function closeCall() { document.getElementById('callModal').classList.remove('show'); }
+
+        // Confirm the call and open the phone dialer
         function confirmCall() {
             const num = document.getElementById('call-num-disp').textContent;
             closeCall();
+            // Remove any non-numeric characters from the number, then open the dialer
             window.location.href = 'tel:' + num.replace(/\D/g, '');
         }
 
-        // Close modals on overlay click
+        // Close any modal when clicking on the overlay outside the content
         document.querySelectorAll('.modal-overlay').forEach(el =>
-            el.addEventListener('click', e => { if (e.target === el) el.classList.remove('show'); })
+            el.addEventListener('click', e => {
+                if (e.target === el) el.classList.remove('show'); // Ensure click is on overlay, not inner content
+            })
         );
     </script>
     <script src="js/bootstrap.bundle.min.js"></script>
