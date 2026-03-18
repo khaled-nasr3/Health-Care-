@@ -1,0 +1,192 @@
+    <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WHO — دليل الصحة في حالات الطوارئ</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/help.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" width="180" class="me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="ai_assistant.html">AI Assistant</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="library.html">Library</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="help.html">Help</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                </ul>
+                <button class="btn btn-primary px-4">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo-badge">
+                <img src="images/who-logo.png" alt="WHO Logo" width="36" height="36">
+            </div>
+            <div class="header-text">
+                <h1>دليل الصحة في حالات الطوارئ</h1>
+                <p>منظمة الصحة العالمية · World Health Organization</p>
+            </div>
+            <div class="header-sep"></div>
+            <div class="header-badge">
+                <span class="dot"></span>
+                مصادر موثوقة
+            </div>
+        </div>
+    </header>
+
+    <div class="alert-banner">
+        <div class="alert-inner">
+            <div class="alert-icon">!</div>
+            <p>
+                <strong class="text-dark">في حالات الطوارئ التي تهدد الحياة، اتصل فوراً برقم الإسعاف المحلي.</strong>
+                هذه الفيديوهات لأغراض تعليمية وتوجيهية فقط.
+            </p>
+        </div>
+    </div>
+
+    <main>
+        <div class="section-header">
+            <h2 class="text-dark">فيديوهات الاستجابة للطوارئ</h2>
+            <p>تعلّم تقنيات الإسعافات الأولية والاستجابة للطوارئ من خبراء الصحة العالميين</p>
+        </div>
+
+        <div class="filter-bar">
+            <button class="filter-btn active text-white" data-filter="all">الكل</button>
+            <button class="filter-btn text-white" data-filter="cpr">الإنعاش القلبي</button>
+            <button class="filter-btn text-white" data-filter="bleeding">النزيف والجروح</button>
+            <button class="filter-btn text-white" data-filter="choking">الاختناق</button>
+            <button class="filter-btn text-white" data-filter="cardiac">النوبة القلبية</button>
+            <button class="filter-btn text-white" data-filter="stroke">السكتة الدماغية</button>
+            <button class="filter-btn text-white" data-filter="seizures">النوبات التشنجية</button>
+        </div>
+
+        <div class="video-grid" id="videoGrid">
+
+            <!-- Card 1: CPR - American Heart Association (embeds allowed) -->
+            <article class="video-card" data-category="cpr">
+                <div class="thumbnail-wrap">
+                    <iframe src="https://www.youtube.com/embed/BUhUiPeEX-8"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">الإنعاش القلبي</span>
+                    <h3>إجراء الإنعاش القلبي الرئوي CPR</h3>
+                    <p>خطوات الإنعاش القلبي الرئوي بضغطات اليدين — جمعية القلب الأمريكية.</p>
+                    <a class="watch-link" href="https://www.youtube.com/watch?v=BUhUiPeEX-8" target="_blank"
+                        rel="noopener">مشاهدة على يوتيوب &larr;</a>
+                </div>
+            </article>
+
+            <!-- Card 2: Choking - American Red Cross -->
+            <article class="video-card" data-category="choking">
+                <div class="thumbnail-wrap">
+                    <iframe src="https://www.youtube.com/embed/cpiJ9eRgK-4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">الاختناق</span>
+                    <h3>التعامل مع حالات الاختناق</h3>
+                    <p>كيفية تطبيق مناورة هيمليك للبالغين والأطفال — الصليب الأحمر الأمريكي.</p>
+                    <a class="watch-link" href="https://www.youtube.com/watch?v=cpiJ9eRgK-4" target="_blank"
+                        rel="noopener">مشاهدة على يوتيوب &larr;</a>
+                </div>
+            </article>
+
+            <!-- Card 3: Bleeding - American Red Cross -->
+            <article class="video-card" data-category="bleeding">
+                <div class="thumbnail-wrap">
+                    <iframe src="https://www.youtube.com/embed/gMMfl0wCxHM"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">النزيف والجروح</span>
+                    <h3>إيقاف النزيف الشديد</h3>
+                    <p>تقنيات السيطرة على النزيف وتطبيق الضغط المباشر — الصليب الأحمر الأمريكي.</p>
+                    <a class="watch-link" href="https://www.youtube.com/watch?v=gMMfl0wCxHM" target="_blank"
+                        rel="noopener">مشاهدة على يوتيوب &larr;</a>
+                </div>
+            </article>
+
+            <!-- Card 4: Heart Attack - American Heart Association -->
+            <article class="video-card" data-category="cardiac">
+                <div class="thumbnail-wrap">
+                    <iframe src="https://www.youtube.com/embed/jouwrfr7_S0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">النوبة القلبية</span>
+                    <h3>أعراض النوبة القلبية والتصرف السريع</h3>
+                    <p>اعرف علامات النوبة القلبية وكيف تتصرف فورًا — جمعية القلب الأمريكية.</p>
+                    <a class="watch-link" href="https://www.youtube.com/watch?v=jouwrfr7_S0" target="_blank"
+                        rel="noopener">مشاهدة على يوتيوب &larr;</a>
+                </div>
+            </article>
+
+            <!-- Card 5: Stroke - American Heart Association -->
+            <article class="video-card" data-category="stroke">
+                <div class="thumbnail-wrap">
+                    <iframe src="https://www.youtube.com/embed/knyTSTwGBxA"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">السكتة الدماغية</span>
+                    <h3>السكتة الدماغية — اعرف العلامات FAST</h3>
+                    <p>طريقة FAST: وجه، ذراع، كلام، وقت — جمعية القلب الأمريكية.</p>
+                    <a class="watch-link" href="https://www.youtube.com/watch?v=knyTSTwGBxA" target="_blank"
+                        rel="noopener">مشاهدة على يوتيوب &larr;</a>
+                </div>
+            </article>
+
+            <!-- Card 6: Seizures - Mass General Brigham -->
+            <article class="video-card" data-category="seizures">
+                <div class="thumbnail-wrap">
+                    <iframe src="https://www.youtube.com/embed/RodeQ86_bxY"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">النوبات التشنجية</span>
+                    <h3>التعامل مع النوبات التشنجية</h3>
+                    <p>كيفية مساعدة شخص يعاني من نوبة تشنجية ومتى تطلب رعاية طبية — Mass General Brigham.</p>
+                    <a class="watch-link" href="https://www.youtube.com/watch?v=RodeQ86_bxY" target="_blank"
+                        rel="noopener">مشاهدة على يوتيوب &larr;</a>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            الفيديوهات من Mass General Brigham — الشريك الرسمي لـ YouTube Health ·
+            <a href="https://www.who.int" target="_blank" rel="noopener">who.int</a>
+            · هذه الفيديوهات لا تُغني عن استشارة الطبيب أو الاتصال بالإسعاف
+        </p>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
